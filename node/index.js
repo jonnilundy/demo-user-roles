@@ -4,6 +4,9 @@ const path = require('path');
 
 const app = express();
 
+app.use(express.static('public/assets/styles'));
+app.use(express.static('public/assets/images'));
+
 const adminMiddleware = wedeployMiddleware.auth({
   url: 'auth-userroles.wedeploy.io',
   scopes: ['admin']
