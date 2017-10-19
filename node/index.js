@@ -15,14 +15,14 @@ const freeMiddleware = wedeployMiddleware.auth({
 });
 
 app.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname, 'public/welcome.html'));
+	res.sendFile(path.join(__dirname, 'public/static/index.html'));
 })
 
-app.get('/user', authMiddleware, function(req, res) {
+app.get('/user', freeMiddleware, function(req, res) {
   console.log('User: ', res.locals.auth.currentUser);
 })
 
-app.get('/admin', authMiddleware, function(req, res) {
+app.get('/admin', adminMiddleware, function(req, res) {
   console.log('User: ', res.locals.auth.currentUser);
 });
 
