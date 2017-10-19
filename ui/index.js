@@ -1,19 +1,28 @@
-var express = require('express');
-var wedeployMiddleware = require('wedeploy-middleware');
+const express = require('express');
+const wedeployMiddleware = require('wedeploy-middleware');
+const path = require('path');
 
-var app = express();
+const app = express();
 
-var authMiddleware = wedeployMiddleware.auth({
+const adminMiddleware = wedeployMiddleware.auth({
   url: 'auth-userroles.wedeploy.io',
-  scopes: ['admin', 'free']
+  scopes: ['admin']
+});
+
+const freeMiddleware = wedeployMiddleware.auth({
+  url: 'auth-userroles.wedeploy.io',
+  scopes: ['free']
 });
 
 app.get('/', function(req, res) {
-	res.send('Hello World!')
+	res.sendFile(path.join(__dirname, 'public/welcome.html'));
+})
+
+app.get('/user', authMiddleware, function(req, res) {
+  console.log('User: ', res.locals.auth.currentUser);
 })
 
 app.get('/admin', authMiddleware, function(req, res) {
-  // User that has been signed in
   console.log('User: ', res.locals.auth.currentUser);
 });
 
