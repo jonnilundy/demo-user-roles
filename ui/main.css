@@ -1,0 +1,161 @@
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	background: #0e141a;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.container {
+	max-width: 360px;
+}
+
+h1 {
+	font-weight: 300;
+	color: rgba(255, 255, 255, 0.9);
+	margin: 0 0 20px;
+}
+
+h3 {
+	font-size: 32px;
+	color: #00d46a;
+	margin: 0 0 20px;
+}
+
+p {
+	font-size: 24px;
+	color: rgba(255, 255, 255, 0.9);
+	margin: 0 0 20px;
+}
+
+.logo {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+label {
+	color: white;
+	display: block;
+	margin: 0 0 5px;
+	text-align: left;
+}
+
+input {
+	background: rgba(255, 255, 255, .2);
+	border-radius: 4px;
+	border: 0;
+	color: white;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 58px;
+	outline: none;
+	padding: 0 20px;
+	width: calc(100% - 40px);
+	margin: 0 0 10px;
+}
+
+button {
+	background: #00d46a;
+	border-radius: 4px;
+	border: 0;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 58px;
+	outline: none;
+	margin: 15px 0 0;
+	padding: 0 48px;
+	width: 100%;
+}
+
+a {
+	color: #00d46a;
+	text-decoration: none;
+	margin: 15px 0 0;
+	display: block;
+	cursor: pointer;
+}
+
+.btn-container {
+	display: inline-block;
+	width: 195px;
+}
+
+.btn {
+	padding: 0;
+	height: 60px;
+	width: 100%;
+	border-radius: 4px;
+	border: 0px solid #fff;
+	margin: 0;
+	margin-bottom: 10px;
+	float: left;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.btn .label {
+	line-height: 58px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.btn .brand {
+	width: 48px;
+	height: 60px;
+	background: rgba(255, 255, 255, 0.1);
+	float: left;
+}
+
+.btn .brand .icon {
+	margin: 18px 12px;
+	width: 24px;
+	height: 24px;
+	display: block;
+}
+
+.btn .brand .icon-google {
+	background: url('images/icon-google-white.png') no-repeat;
+	background-size: 24px 24px;
+}
+
+.btn.btn-google {
+	background: #00695C;
+	transition: background .3s ease-in-out;
+}
+
+.btn.btn-google:hover {
+	background: rgba(0,105,92, 0.8);
+}
+
+.btn .brand .icon-github {
+	background: url('images/icon-github-white.png') no-repeat;
+	background-size: 24px 24px;
+}
+
+.btn.btn-github {
+	background: #4527A0;
+	transition: background .3s ease-in-out;
+}
+
+.btn.btn-github:hover {
+	background: rgba(69,39,160, 0.8);
+}

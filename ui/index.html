@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign In</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<h1>Sign-In With</h1>
+	<div class="btn-container">
+		<button class="btn btn-google" type="button">
+			<div class="brand">
+				<div class="icon icon-google"></div>
+			</div>
+			<div class="label">Google</div>
+		</button>
+		<button class="btn btn-github" type="button">
+			<div class="brand">
+				<div class="icon icon-github"></div>
+			</div>
+			<div class="label">GitHub</div>
+		</button>
+	</div>
+	<p>or</p>
+	<form name="user" class="container" onsubmit="signInUser(); return false;">
+		<input name="email" type="email" placeholder="Email" required>
+		<input name="password" type="password" placeholder="Password" required>
+		<button class="btn-password" type="submit">Submit</button>
+		<a href="signup.html">Create an account</a>
+	</form>
+	<img class="logo" src="images/logo.png" width="150" alt="WeDeploy">
+
+	<script src="https://cdn.wedeploy.com/api/latest/wedeploy.js"></script>
+
+	<script src="scripts/index.js"></script>
+</body>
+</html>

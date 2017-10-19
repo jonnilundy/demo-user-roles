@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<form name="user" id="user" class="container" onsubmit="userCreate(); return false;">
+		<h1>Sign Up</h1>
+		<input name="name" type="text" placeholder="Name" required>
+		<input name="email" type="email" placeholder="Email" required>
+		<input name="password" type="password" placeholder="Password" required>
+		<select name="role">
+			<option value="admin">Admin</option>
+			<option selected value="free">Free</option>
+		</select>
+		<button class="user-create" type="submit">Submit</button>
+		<a href="/">Back to login</a>
+	</form>
+	<img class="logo" src="images/logo.png" width="150" alt="WeDeploy">
+
+	<script src="https://cdn.wedeploy.com/api/4.0.1/wedeploy.js"></script>
+
+	<script src="scripts/signup.js"></script>
+</body>
+</html>
