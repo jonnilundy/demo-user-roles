@@ -7,22 +7,7 @@
 	<link rel="stylesheet" href="/main.css">
 </head>
 <body>
-	<h1>Sign-In With</h1>
-	<div class="btn-container">
-		<button class="btn btn-google" type="button">
-			<div class="brand">
-				<div class="icon icon-google"></div>
-			</div>
-			<div class="label">Google</div>
-		</button>
-		<button class="btn btn-github" type="button">
-			<div class="brand">
-				<div class="icon icon-github"></div>
-			</div>
-			<div class="label">GitHub</div>
-		</button>
-	</div>
-	<p>or</p>
+	<h1>Sign-In</h1>
 	<form name="user" class="container" onsubmit="signInUser(); return false;">
 		<input name="email" type="email" placeholder="Email" required>
 		<input name="password" type="password" placeholder="Password" required>
@@ -30,6 +15,24 @@
 		<a href="/signup/">Create an account</a>
 	</form>
 
-	<script src="../assets/scripts/index.js"></script>
+	<script>
+		// AUTH ENDPOINT
+		var auth = WeDeploy.auth('auth-userroles.wedeploy.io');
+
+
+		// PASSWORD SIGN-IN
+		function signInUser() {
+			auth.signInWithEmailAndPassword(user.email.value, user.password.value)
+			.then(function() {
+				document.location.href = "/user";
+			})
+			.catch(function() {
+				alert('Sign-in failed. Try another email/password.');
+			});
+		};
+
+		// REDIRECT IF USER IS ALREADY LOGGED-IN
+		if (auth.currentUser) {document.location.href = '/welcome.html';}
+	</script>
 </body>
 </html>

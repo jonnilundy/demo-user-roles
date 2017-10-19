@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 app.use(express.static('public/assets/styles'));
-app.use(express.static('public/assets/images'));
+app.use(express.static('public/assets/scripts'));
 
 const adminMiddleware = wedeployMiddleware.auth({
   url: 'auth-userroles.wedeploy.io',
