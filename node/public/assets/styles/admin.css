@@ -8,7 +8,7 @@ body {
 
 h1 {
 	margin: 60px 0 36px;
-	font-weight: 700;
+	color: #24a9f7;
 }
 
 p {
@@ -32,17 +32,19 @@ p {
 	border-radius: 4px;
 	box-shadow: 0 2px 8px rgba(14,20,26,0.1);
 	transition: box-shadow 0.333s;
+	font-weight: 700;
 }
 
 .user-item:hover {
 	box-shadow: 0 4px 10px rgba(14,20,26,0.2);
+	cursor: pointer;
 }
 
 .user-item.title {
-	background-color: #ffffff;
 	margin-bottom: 0;
 	padding-bottom: 0;
 	box-shadow: none;
+	font-weight: 300;
 }
 
 .user-item .name {
