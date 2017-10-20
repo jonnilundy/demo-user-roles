@@ -63,12 +63,12 @@ app.post('/login', function(req, res) {
     console.log('currentUser', currentUser);
     if (currentUser.hasSupportedScopes('free')) {
       res.redirect('/user?access_token=' + auth.currentUser.token);
-    } 
+    }
     else if (currentUser.hasSupportedScopes('admin')) {
       res.redirect('/admin?access_token=' + auth.currentUser.token);
     }
     else {
-      res.redirect('/login');  
+      res.redirect('/login');
     }
   })
 
