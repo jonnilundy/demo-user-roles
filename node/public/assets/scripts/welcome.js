@@ -1,15 +1,8 @@
 // AUTH VARIABLE FOR REUSE
-var auth = WeDeploy.auth('auth-scopesdemo.wedeploy.io');
+var auth = WeDeploy.auth('auth-userroles.wedeploy.io');
 
 // DISPLAY USER INFO
-if (auth.currentUser.name) {
-	document.querySelector('.username').innerHTML = auth.currentUser.name;
-} else {
-	document.querySelector('.username').innerHTML = auth.currentUser.email;
-};
-
-// REDIRECT IF NO USER SIGNED-IN
-if (auth.currentUser == null) {document.location.href = '/';}
+document.querySelector('.username').innerHTML = auth.currentUser.name;
 
 // SIGN-OUT USER
 function out() {

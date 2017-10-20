@@ -4,27 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Welcome</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="/main.css">
 </head>
 <body>
 	<h1>Welcome</h1>
 	<h3 class="username"></h3>
-	<a onclick="out(); return false;" style="cursor: pointer;">Logout</a>
-
-	<script>
-		// AUTH VARIABLE FOR REUSE
-		var auth = WeDeploy.auth('auth-userroles.wedeploy.io');
-
-		// DISPLAY USER INFO
-		document.querySelector('.username').innerHTML = auth.currentUser.name;
-
-		// SIGN-OUT USER
-		function out() {
-			auth.signOut()
-			.then(() => {
-				document.location.href = '/';
-			});
-		};
-	</script>
+	<a onclick="out(); return false;">Logout</a>
 </body>
 </html>

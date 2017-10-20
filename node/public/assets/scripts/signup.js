@@ -1,5 +1,5 @@
 // AUTH VARIABLE FOR REUSE
-var auth = WeDeploy.auth('auth-scopesdemo.wedeploy.io').auth(WeDeploy.auth('auth-scopesdemo.wedeploy.io').currentUser.token);
+var auth = WeDeploy.auth('auth-userroles.wedeploy.io');
 
 // CREATE USER FROM FORM
 function userCreate() {

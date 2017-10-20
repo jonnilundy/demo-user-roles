@@ -1,12 +1,12 @@
 // AUTH ENDPOINT
-var auth = WeDeploy.auth('auth-scopesdemo.wedeploy.io');
+var auth = WeDeploy.auth('auth-userroles.wedeploy.io');
 
 
 // PASSWORD SIGN-IN
 function signInUser() {
 	auth.signInWithEmailAndPassword(user.email.value, user.password.value)
 	.then(function() {
-		document.location.href = '/welcome.html';
+		document.location.href = "/user";
 	})
 	.catch(function() {
 		alert('Sign-in failed. Try another email/password.');
