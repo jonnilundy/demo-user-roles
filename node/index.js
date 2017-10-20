@@ -1,14 +1,15 @@
 import express from 'express';
 import wedeployMiddleware from 'wedeploy-middleware';
-import path from 'path';
 import bodyParser from 'body-parser';
 import {postLogin} from './routes/post-login';
 import {postUser} from './routes/post-user';
 import {login} from './routes/login';
 import {users} from './routes/users';
+import {user} from './routes/user';
 import {signup} from './routes/signup';
 import cookieParser from 'cookie-parser';
-import {admin} from './routes/admin';
+import {admin, handlebarsListHelper} from './routes/admin';
+import handlebars from 'handlebars';
 
 const app = express();
 
@@ -46,12 +47,12 @@ app.put('/user', adminMiddleware, async function(req, res, next) {
   res.redirect('/users');
 });
 
-app.get('/user', freeMiddleware, function(req, res) {
-  res.sendFile(path.join(__dirname, 'public/static/user/index.html'));
-});
+app.get('/user', freeMiddleware, user);
 
 app.get('/admin', adminMiddleware, admin);
 
 app.listen(4000, function() {
   console.log('Example app listening on port 4000!');
 });
+
+handlebars.registerHelper('list', handlebarsListHelper);
