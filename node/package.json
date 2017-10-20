@@ -4,9 +4,19 @@
   "description": "Display how to manage user roles using WeDeploy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon -w index --exec \"babel-node index --presets es2015,stage-0\"",
+    "build": "babel index -s -D -d dist --presets es2015,stage-0",
+    "start": "node dist"
+  },
+  "eslintConfig": {
+    "extends": "liferay",
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    }
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +24,16 @@
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
-    "nodemon": "^1.12.1",
     "wedeploy": "^4.0.1",
     "wedeploy-middleware": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.9.0",
+    "eslint-config-liferay": "^1.0.2",
+    "nodemon": "^1.12.1"
   }
 }
