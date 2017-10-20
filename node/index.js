@@ -6,6 +6,7 @@ import {postLogin} from './routes/post-login';
 import {postUser} from './routes/post-user';
 import {users} from './routes/users';
 import cookieParser from 'cookie-parser';
+import handlebars from 'handlebars';
 
 const app = express();
 
