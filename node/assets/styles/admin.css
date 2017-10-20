@@ -22,7 +22,7 @@ p {
 }
 
 .user-item {
-	padding: 8px;
+	padding: 24px 8px;
 	margin: 0 0 24px;
 	display: flex;
 	flex-direction: row;
@@ -35,10 +35,10 @@ p {
 	font-weight: 700;
 }
 
-.user-item:hover {
+/*.user-item:hover {
 	box-shadow: 0 4px 10px rgba(14,20,26,0.2);
 	cursor: pointer;
-}
+}*/
 
 .user-item.title {
 	margin-bottom: 0;
@@ -77,4 +77,8 @@ p {
 	.user-item .role {
 		width: 33%;
 	}
+}
+
+a {
+	margin-bottom: 48px;
 }
