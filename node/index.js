@@ -33,15 +33,20 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/signup', function(req, res) {
-  if (req.query.cmd === 'fail') {
-    alert('Sign-up failed. Try another email.');
-  }
   res.sendFile(path.join(__dirname, 'public/static/signup/index.html'));
 });
 
 app.get('/logout', (req, res, next) => {
   res.clearCookie('access_token');
   res.redirect('/');
+});
+
+app.put('/user', adminMiddleware, async function(req, res, next) {
+  const currentUser = res.locals.auth.currentUser;
+  await currentUser.updateUser({
+    supportedScopes: ['admin'],
+  });
+  res.redirect('/users');
 });
 
 app.post('/user', postUser);
