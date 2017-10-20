@@ -15,21 +15,7 @@
 				<div class="email"><p>Email</p></div>
 				<div class="role"><p>Role</p></div>
 			</div>
-			<div class="user-item">
-				<div class="name"><p>Jonni Lundy</p></div>
-				<div class="email"><p>jelundy@me.com</p></div>
-				<div class="role"><p>Admin</p></div>
-			</div>
-			<div class="user-item">
-				<div class="name"><p>Nolan Chan</p></div>
-				<div class="email"><p>nolanchan@gmail.com</p></div>
-				<div class="role"><p>Free</p></div>
-			</div>
-			<div class="user-item">
-				<div class="name"><p>Zeno Rocha</p></div>
-				<div class="email"><p>zeno.rocha@gmail.com</p></div>
-				<div class="role"><p>Free</p></div>
-			</div>
+			{{#list users}}{{name}}{{email}}{{role}}{{/list}}
 		</div>
 		<a href="/logout">Sign Out</a>
 	</body>
