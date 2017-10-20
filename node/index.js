@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const auth = wedeploy.auth('auth-userroles.wedeploy.io').auth('e685224b-9431-4580-824d-1358954bbcca');
 
+app.use(express.static('public/assets/styles'));
+
 app.use(bodyParser.urlencoded({extended: true}));
 
 const adminMiddleware = wedeployMiddleware.auth({
@@ -40,7 +42,7 @@ app.post('/user', function(req, res) {
     email: req.body.email,
     name: req.body.name,
     password: req.body.password,
-    supportedScopes: ['free']
+    supportedScopes: ['admin']
   })
   .then(function() {
     auth.signInWithEmailAndPassword(req.body.email, req.body.password)
@@ -54,14 +56,16 @@ app.post('/user', function(req, res) {
 })
 
 app.post('/login', function(req, res) {
+  console.log('inside post login');
   auth.signInWithEmailAndPassword(req.body.email, req.body.password)
   .then(function() {
     const currentUser = auth.currentUser;
+    console.log('currentUser', currentUser);
     if (currentUser.hasSupportedScopes('free')) {
       res.redirect('/user?access_token=' + auth.currentUser.token);
     } 
-    else if (currentUser.hasSupportedScopes('team')) {
-      res.redirect('/user?access_token=' + auth.currentUser.token);
+    else if (currentUser.hasSupportedScopes('admin')) {
+      res.redirect('/admin?access_token=' + auth.currentUser.token);
     }
     else {
       res.redirect('/login');  
@@ -71,12 +75,11 @@ app.post('/login', function(req, res) {
 })
 
 app.get('/user', freeMiddleware, function(req, res) {
-  console.log('User: ', res.locals.auth.currentUser);
   res.sendFile(path.join(__dirname, 'public/static/user/index.html'));
 })
 
 app.get('/admin', adminMiddleware, function(req, res) {
-  console.log('User: ', res.locals.auth.currentUser);
+  res.sendFile(path.join(__dirname, 'public/static/admin/index.html'));
 });
 
 app.listen(4000, function () {
