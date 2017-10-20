@@ -7,6 +7,7 @@ import {postUser} from './routes/post-user';
 import {users} from './routes/users';
 import cookieParser from 'cookie-parser';
 import handlebars from 'handlebars';
+import {readFileSync} from 'fs';
 
 const app = express();
 
@@ -25,7 +26,10 @@ const freeMiddleware = wedeployMiddleware.auth({
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/static/index.html'));
+  const source = readFileSync('./pages/index.html').toString();
+  const template = handlebars.compile(source);
+  const html = template({title: 'Welcome'});
+  res.send(html);
 });
 
 app.get('/login', function(req, res) {
