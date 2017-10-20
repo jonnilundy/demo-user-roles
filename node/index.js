@@ -40,7 +40,7 @@ app.get('/signup', function(req, res) {
 
 app.get('/logout', (req, res, next) => {
   res.clearCookie('access_token');
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 app.post('/user', postUser);
