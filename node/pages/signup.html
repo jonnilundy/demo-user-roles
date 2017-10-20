@@ -1,7 +1,3 @@
----
-title: Sign In
----
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,12 +8,13 @@ title: Sign In
 		<link rel="stylesheet" href="/admin.css">
 	</head>
 	<body>
-		<h1>{{title}}</h1>
-		<form name="user" class="container" action="/login" method="post" autocomplete="off">
+		<form name="user" id="user" class="container" action="/user" method="post" autocomplete="off">
+			<h1>{{title}}</h1>
+			<input name="name" type="text" placeholder="Name" required>
 			<input name="email" type="email" placeholder="Email" required>
 			<input name="password" type="password" placeholder="Password" required>
-			<input class="btn-password" type="submit" value="Submit"></input>
-			<a href="/signup">Create an account</a>
+			<input class="user-create" type="submit" value="Submit"></input>
+			<a href="/">Back to login</a>
 		</form>
 	</body>
 </html>
