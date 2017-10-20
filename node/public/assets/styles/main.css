@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-	background: #0e141a;
+	/*background: #0e141a;*/
 	font-family: 'Open Sans', sans-serif;
 	display: flex;
 	flex-direction: column;
@@ -23,7 +23,7 @@ body {
 
 h1 {
 	font-weight: 300;
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(14, 20, 26, 0.9);
 	margin: 0 0 20px;
 }
 
@@ -35,19 +35,19 @@ h3 {
 
 p {
 	font-size: 24px;
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(14, 20, 26, 0.9);
 	margin: 0 0 20px;
 }
 
 label {
-	color: white;
+	color: rgba(14, 20, 26, 0.9);
 	display: block;
 	margin: 0 0 5px;
 	text-align: left;
 }
 
 input {
-	background: rgba(255, 255, 255, .2);
+	background: color: rgba(14, 20, 26, 0.2);
 	border-radius: 4px;
 	border: 0;
 	color: white;
@@ -100,54 +100,4 @@ a {
 	float: left;
 	cursor: pointer;
 	font-weight: 600;
-}
-
-.btn .label {
-	line-height: 58px;
-	color: #fff;
-	font-size: 16px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-.btn .brand {
-	width: 48px;
-	height: 60px;
-	background: rgba(255, 255, 255, 0.1);
-	float: left;
-}
-
-.btn .brand .icon {
-	margin: 18px 12px;
-	width: 24px;
-	height: 24px;
-	display: block;
-}
-
-.btn .brand .icon-google {
-	background: url('images/icon-google-white.png') no-repeat;
-	background-size: 24px 24px;
-}
-
-.btn.btn-google {
-	background: #00695C;
-	transition: background .3s ease-in-out;
-}
-
-.btn.btn-google:hover {
-	background: rgba(0,105,92, 0.8);
-}
-
-.btn .brand .icon-github {
-	background: url('images/icon-github-white.png') no-repeat;
-	background-size: 24px 24px;
-}
-
-.btn.btn-github {
-	background: #4527A0;
-	transition: background .3s ease-in-out;
-}
-
-.btn.btn-github:hover {
-	background: rgba(69,39,160, 0.8);
 }
