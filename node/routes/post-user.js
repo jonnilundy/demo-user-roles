@@ -14,10 +14,11 @@ export async function postUser(req, res, next) {
       email: req.body.email,
       name: req.body.name,
       password: req.body.password,
-      supportedScopes: ['admin'],
+      supportedScopes: ['free'],
     });
     await auth.signInWithEmailAndPassword(req.body.email, req.body.password);
-    res.redirect('/user?access_token=' + auth.currentUser.token);
+    res.cookie('access_token', auth.currentUser.token);
+    res.redirect('/user');
   } catch (error) {
     res.redirect('/signup?cmd=fail');
   }

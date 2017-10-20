@@ -4,6 +4,7 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import {postLogin} from './routes/post-login';
 import {postUser} from './routes/post-user';
+import {users} from './routes/users';
 import cookieParser from 'cookie-parser';
 
 const app = express();
@@ -37,9 +38,16 @@ app.get('/signup', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/static/signup/index.html'));
 });
 
+app.get('/logout', (req, res, next) => {
+  res.clearCookie('access_token');
+  res.redirect('/login');
+});
+
 app.post('/user', postUser);
 
 app.post('/login', postLogin);
+
+app.get('/users', adminMiddleware, users);
 
 app.get('/user', freeMiddleware, function(req, res) {
   res.sendFile(path.join(__dirname, 'public/static/user/index.html'));

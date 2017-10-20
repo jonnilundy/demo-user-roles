@@ -4,7 +4,7 @@
   "description": "Display how to manage user roles using WeDeploy",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -w index --exec \"babel-node index --presets es2015,stage-0\"",
+    "dev": "nodemon -w index.js -w routes --exec \"babel-node index.js --presets es2015,stage-0\"",
     "build": "babel index -s -D -d dist --presets es2015,stage-0",
     "start": "node dist"
   },
