@@ -8,6 +8,7 @@ import {login} from './routes/login';
 import {users} from './routes/users';
 import {signup} from './routes/signup';
 import cookieParser from 'cookie-parser';
+import {admin} from './routes/admin';
 
 const app = express();
 
@@ -49,9 +50,7 @@ app.get('/user', freeMiddleware, function(req, res) {
   res.sendFile(path.join(__dirname, 'public/static/user/index.html'));
 });
 
-app.get('/admin', adminMiddleware, function(req, res) {
-  res.sendFile(path.join(__dirname, 'public/static/admin/index.html'));
-});
+app.get('/admin', adminMiddleware, admin);
 
 app.listen(4000, function() {
   console.log('Example app listening on port 4000!');
