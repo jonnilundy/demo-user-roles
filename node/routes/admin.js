@@ -1,7 +1,9 @@
 import handlebars from 'handlebars';
-import {readFileSync} from 'fs';
+import {readFile} from 'fs';
+import {promisify} from 'util';
 const wedeploy = require('wedeploy');
 const auth = wedeploy.auth('auth-userroles.wedeploy.io');
+const readFileAsync = promisify(readFile);
 
 /**
  * Admin Route
@@ -12,14 +14,15 @@ const auth = wedeploy.auth('auth-userroles.wedeploy.io');
 export async function admin(req, res, next) {
   try {
     const currentUser = res.locals.auth.currentUser;
-    await auth.loadCurrentUser(currentUser.token);
-    const allUsers = await auth.getAllUsers();
+    auth.currentUser = currentUser;
+    const [allUsers, source] = await Promise.all([
+      auth.getAllUsers(),
+      readFileAsync('./pages/admin.html'),
+    ]);
     const allUsersSorted = allUsers.sort(
 			(a, b) => a.supportedScopes[0].localeCompare(b.supportedScopes[0])
     );
-
-		const source = readFileSync('./pages/admin.html').toString();
-		const template = handlebars.compile(source);
+		const template = handlebars.compile(source.toString());
 		const html = template({users: allUsersSorted, title: 'Admin Dashboard'});
     res.send(html);
   } catch (error) {
