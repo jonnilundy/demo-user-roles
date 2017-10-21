@@ -64,9 +64,10 @@ p {
 	padding-right: 32px;
 }
 
-@media (min-width: 698px) {
+@media (min-width: 512px) {
 	.user-item .name {
 		width: 33%;
+		padding-left: 32px;
 	}
 
 	.user-item .email {
@@ -76,9 +77,10 @@ p {
 
 	.user-item .role {
 		width: 33%;
+		padding-right: 32px;
 	}
 }
 
 a {
-	margin-bottom: 48px;
+	padding-bottom: 48px;
 }

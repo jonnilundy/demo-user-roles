@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 	    <title>{{title}}</title>
+	    <meta name="viewport" content="initial-scale=1">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
 		<link rel="stylesheet" href="/main.css">
-		<link rel="stylesheet" href="/admin.css">
 	</head>
 	<body>
 		<form name="user" id="user" class="container" action="/user" method="post" autocomplete="off">
@@ -13,7 +13,7 @@
 			<input name="name" type="text" placeholder="Name" required>
 			<input name="email" type="email" placeholder="Email" required>
 			<input name="password" type="password" placeholder="Password" required>
-			<input class="user-create" type="submit" value="Submit"></input>
+			<button class="user-create" type="submit">Submit</button>
 			<a href="/">Back to login</a>
 		</form>
 	</body>

@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 	    <title>{{title}}</title>
+	    <meta name="viewport" content="initial-scale=1">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
 		<link rel="stylesheet" href="/main.css">
-		<link rel="stylesheet" href="/admin.css">
 	</head>
 	<body>
 		<h1>{{title}}</h1>
 		<form name="user" class="container" action="/login" method="post" autocomplete="off">
 			<input name="email" type="email" placeholder="Email" required>
 			<input name="password" type="password" placeholder="Password" required>
-			<input class="btn-password" type="submit" value="Submit"></input>
+			<button class="user-create" type="submit">Submit</button>
 			<a href="/signup">Create an account</a>
 		</form>
 	</body>
