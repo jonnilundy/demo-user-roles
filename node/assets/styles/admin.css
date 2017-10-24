@@ -35,10 +35,14 @@ p {
 	font-weight: 700;
 }
 
-/*.user-item:hover {
+.user-item:hover {
 	box-shadow: 0 4px 10px rgba(14,20,26,0.2);
 	cursor: pointer;
-}*/
+}
+
+a.user-item:hover {
+	color: rgba(14, 20, 26, 0.9);
+}
 
 .user-item.title {
 	margin-bottom: 0;
