@@ -1,19 +1,15 @@
-const handlebars = require('handlebars');
-
 /**
- * Create User List
+ * HandleBars list users helper
+ * @param  {Auth.<array>} users
+ * @return {String} HTML string of user data
  */
-export async function userList(req, res, next) {
-  await Handlebars.registerHelper('list', function(user) {
-    var userList = "<div class='user-list'>";
-
-    for(var i=0, l=user.length; i<l; i++) {
-      userList = userList +
-        "<div class="name">" + user.name[i] + "</div>" +
-        "<div class="email">" + user.email[i] + "</div>" +
-        "<div class="role">" + user.supportedScopes[i] + "</div>" +
-    }
-
-    return userList + "</div>";
-  })
+export function handlebarsListHelper(users) {
+  let userList = '';
+  for (const user of users) {
+    userList = userList + '<div class="user-item">' +
+      '<div class="name">' + user.name + '</div>' +
+      '<div class="email">' + user.email + '</div>' +
+      '<div class="role">' + user.supportedScopes[0] + '</div>' + '</div>';
+  }
+  return userList;
 }

@@ -1,6 +1,7 @@
 import handlebars from 'handlebars';
 import {readFile} from 'fs';
 import {promisify} from 'util';
+
 const wedeploy = require('wedeploy');
 const auth = wedeploy.auth('auth-userroles.wedeploy.io');
 const readFileAsync = promisify(readFile);
@@ -28,20 +29,4 @@ export async function admin(req, res, next) {
   } catch (error) {
     throw error;
   }
-}
-
-/**
- * HandleBars list users helper
- * @param  {Auth.<array>} users
- * @return {String} HTML string of user data
- */
-export function handlebarsListHelper(users) {
-  let userList = '';
-  for (const user of users) {
-    userList = userList + '<div class="user-item">' +
-      '<div class="name">' + user.name + '</div>' +
-      '<div class="email">' + user.email + '</div>' +
-      '<div class="role">' + user.supportedScopes[0] + '</div>' + '</div>';
-  }
-  return userList;
 }
