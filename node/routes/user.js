@@ -17,6 +17,12 @@ export async function user(req, res, next) {
   const source = readFileSync('./pages/user.html').toString();
   const template = handlebars.compile(source);
   console.log('user is', user);
-  const html = template({title: 'Update User', name: user.name, user});
+  const html = template({
+		title: 'Update User',
+		name: user.name,
+		email: user.email,
+		role: user.supportedScopes[0],
+		user,
+  });
   res.send(html);
 }
