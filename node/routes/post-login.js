@@ -1,6 +1,5 @@
 const wedeploy = require('wedeploy');
-const auth = wedeploy.auth('auth-userroles.wedeploy.io')
-  .auth('e685224b-9431-4580-824d-1358954bbcca');
+const auth = wedeploy.auth('auth-userroles.wedeploy.io');
 
 /**
  * Post Login Route

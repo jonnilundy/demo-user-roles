@@ -11,6 +11,8 @@ import {profile} from '../routes/profile';
 import {user} from '../routes/user';
 import {signup} from '../routes/signup';
 import {admin} from '../routes/admin';
+import {upgrade} from '../routes/upgrade';
+import {downgrade} from '../routes/downgrade';
 import {handlebarsListHelper} from '../components/all-users';
 import {handlebarsUpdateHelper} from '../components/update';
 
@@ -42,6 +44,8 @@ app.get('/admin', adminMiddleware, admin);
 app.get('/users', adminMiddleware, users);
 app.post('/user', postUser);
 app.post('/login', postLogin);
+app.get('/upgrade/:userId', adminMiddleware, upgrade);
+app.get('/downgrade/:userId', adminMiddleware, downgrade);
 
 app.get('/logout', (req, res, next) => {
   res.clearCookie('access_token');
