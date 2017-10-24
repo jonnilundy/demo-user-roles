@@ -60,6 +60,10 @@ app.put('/user', adminMiddleware, async function(req, res, next) {
   res.redirect('/users');
 });
 
+app.get('*', (req, res) => {
+  res.redirect('/');
+});
+
 app.listen(4000, function() {
   console.log('Example app listening on port 4000!');
 });
