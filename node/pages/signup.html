@@ -8,8 +8,11 @@
 		<link rel="stylesheet" href="/main.css">
 	</head>
 	<body>
-		<form name="user" id="user" class="container" action="/user" method="post" autocomplete="off">
-			<h1>{{title}}</h1>
+		<h1>{{title}}</h1>
+		{{#if fail}}
+			<div class="fail">The email you provided is associated to an existing account.</div>
+		{{/if}}
+		<form name="user" class="container" action="/user" method="post" autocomplete="off">
 			<input name="name" type="text" placeholder="Name" required>
 			<input name="email" type="email" placeholder="Email" required>
 			<input name="password" type="password" placeholder="Password" required>

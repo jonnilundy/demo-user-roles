@@ -9,6 +9,9 @@
 	</head>
 	<body>
 		<h1>{{title}}</h1>
+		{{#if fail}}
+			<div class="fail">The email or password you provided is invalid.</div>
+		{{/if}}
 		<form name="user" class="container" action="/login" method="post" autocomplete="off">
 			<input name="email" type="email" placeholder="Email" required>
 			<input name="password" type="password" placeholder="Password" required>
