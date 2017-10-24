@@ -6,14 +6,10 @@
 	    <meta name="viewport" content="initial-scale=1">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
 		<link rel="stylesheet" href="/main.css">
-		<link rel="stylesheet" href="/admin.css">
 	</head>
 	<body>
 		<h1>{{title}}</h1>
-		<a class="back" href="/admin">Back</a>
-		<h3 class="name">{{name}}</h3>
-		<p class="email">{{email}}</p>
-		<p class="role">{{role}}</p>
-		{{#update user}}{{/update}}
+		<h3 class="username">{{name}}</h3>
+		<a href="/logout">Sign Out</a>
 	</body>
 </html>
