@@ -20,6 +20,7 @@ export async function admin(req, res, next) {
       auth.getAllUsers(),
       readFileAsync('./pages/admin.html'),
     ]);
+    console.log('allUsers is', allUsers);
     const allUsersSorted = allUsers.sort(
 			(a, b) => a.supportedScopes[0].localeCompare(b.supportedScopes[0])
     );

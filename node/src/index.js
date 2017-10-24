@@ -35,7 +35,7 @@ app.get('/', login);
 app.get('/login', login);
 app.get('/signup', signup);
 app.get('/profile', freeMiddleware, profile);
-app.get('/user', adminMiddleware, user);
+app.get('/user/:userId', adminMiddleware, user);
 app.get('/admin', adminMiddleware, admin);
 app.get('/users', adminMiddleware, users);
 app.post('/user', postUser);

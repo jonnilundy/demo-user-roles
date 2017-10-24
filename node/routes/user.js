@@ -13,9 +13,9 @@ const auth = wedeploy.auth('auth-userroles.wedeploy.io');
 export async function user(req, res, next) {
 	const currentUser = res.locals.auth.currentUser;
 	auth.currentUser = currentUser;
-	const user = auth.getUser(req.params.userId);
+	const user = await auth.getUser(req.params.userId);
   const source = readFileSync('./pages/user.html').toString();
   const template = handlebars.compile(source);
-  const html = template({title: 'Welcome', name: currentUser.name});
+  const html = template({title: 'Database User Page', name: user.name});
   res.send(html);
 }
