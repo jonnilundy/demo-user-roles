@@ -15,7 +15,6 @@ export async function deleteUser(req, res, next) {
     await auth.deleteUser(userId);
     res.redirect('/admin');
   } catch (error) {
-    console.log('error is', error);
     res.redirect('/admin');
   }
 }
