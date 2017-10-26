@@ -9,6 +9,7 @@ import {login} from '../routes/login';
 import {users} from '../routes/users';
 import {profile} from '../routes/profile';
 import {user} from '../routes/user';
+import {deleteUser} from '../routes/deleteUser';
 import {signup} from '../routes/signup';
 import {admin} from '../routes/admin';
 import {upgrade} from '../routes/upgrade';
@@ -28,11 +29,13 @@ handlebars.registerHelper('update', handlebarsUpdateHelper);
 const adminMiddleware = wedeployMiddleware.auth({
   url: 'auth-userroles.wedeploy.io',
   scopes: ['admin'],
+  redirect: '/',
 });
 
 const freeMiddleware = wedeployMiddleware.auth({
   url: 'auth-userroles.wedeploy.io',
   scopes: ['free'],
+  redirect: '/',
 });
 
 app.get('/', login);
@@ -46,6 +49,7 @@ app.post('/user', postUser);
 app.post('/login', postLogin);
 app.get('/upgrade/:userId', adminMiddleware, upgrade);
 app.get('/downgrade/:userId', adminMiddleware, downgrade);
+// app.delete('/user/delete/:userId', adminMiddleware, deleteUser);
 
 app.get('/logout', (req, res, next) => {
   res.clearCookie('access_token');

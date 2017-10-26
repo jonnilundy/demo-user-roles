@@ -9,7 +9,7 @@ import {readFileSync} from 'fs';
  */
 export async function profile(req, res, next) {
 	const currentUser = res.locals.auth.currentUser;
-  const source = readFileSync('./pages/user.html').toString();
+  const source = readFileSync('./pages/profile.html').toString();
   const template = handlebars.compile(source);
   const html = template({title: 'Welcome', name: currentUser.name});
   res.send(html);

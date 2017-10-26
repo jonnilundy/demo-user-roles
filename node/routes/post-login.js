@@ -16,7 +16,7 @@ export async function postLogin(req, res, next) {
     if (currentUser.hasSupportedScopes('admin')) {
       res.redirect('/admin');
     } else if (currentUser.hasSupportedScopes('free')) {
-      res.redirect('/user');
+      res.redirect('/profile');
     } else {
       res.redirect('/login');
     }
