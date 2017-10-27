@@ -15,7 +15,7 @@ import {admin} from '../routes/admin';
 import {upgrade} from '../routes/upgrade';
 import {downgrade} from '../routes/downgrade';
 import {handlebarsListHelper} from '../components/all-users';
-import {handlebarsUpdateHelper} from '../components/update';
+import {handlebarsScopeHelper} from '../components/scope';
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(express.static('assets/styles'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 handlebars.registerHelper('list', handlebarsListHelper);
-handlebars.registerHelper('update', handlebarsUpdateHelper);
+handlebars.registerHelper('scope', handlebarsScopeHelper);
 
 const adminMiddleware = wedeployMiddleware.auth({
   url: 'auth-userroles.wedeploy.io',

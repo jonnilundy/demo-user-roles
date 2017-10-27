@@ -18,7 +18,7 @@ export async function user(req, res, next) {
   const template = handlebars.compile(source);
   console.log('user is', user);
   const html = template({
-		title: 'Update User',
+		title: 'User Info',
 		name: user.name,
 		email: user.email,
 		role: user.supportedScopes[0],
