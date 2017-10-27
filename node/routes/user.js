@@ -1,8 +1,9 @@
+import config from '../config';
 import handlebars from 'handlebars';
 import {readFileSync} from 'fs';
+import wedeploy from 'wedeploy';
 
-const wedeploy = require('wedeploy');
-const auth = wedeploy.auth('auth-userroles.wedeploy.io');
+const auth = wedeploy.auth(config.authServiceUrl);
 
 /**
  * User Route

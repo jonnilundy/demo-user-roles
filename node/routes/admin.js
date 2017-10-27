@@ -1,9 +1,10 @@
+import config from '../config';
 import handlebars from 'handlebars';
 import {readFile} from 'fs';
 import {promisify} from 'util';
+import wedeploy from 'wedeploy';
 
-const wedeploy = require('wedeploy');
-const auth = wedeploy.auth('auth-userroles.wedeploy.io');
+const auth = wedeploy.auth(config.authServiceUrl);
 const readFileAsync = promisify(readFile);
 
 /**

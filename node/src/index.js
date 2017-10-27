@@ -3,6 +3,7 @@ import wedeployMiddleware from 'wedeploy-middleware';
 import bodyParser from 'body-parser';
 import handlebars from 'handlebars';
 import cookieParser from 'cookie-parser';
+import config from '../config';
 import {postLogin} from '../routes/post-login';
 import {postUser} from '../routes/post-user';
 import {login} from '../routes/login';
@@ -27,13 +28,13 @@ handlebars.registerHelper('list', handlebarsListHelper);
 handlebars.registerHelper('scope', handlebarsScopeHelper);
 
 const adminMiddleware = wedeployMiddleware.auth({
-  url: 'auth-userroles.wedeploy.io',
+  url: config.authServiceUrl,
   scopes: ['admin'],
   redirect: '/',
 });
 
 const freeMiddleware = wedeployMiddleware.auth({
-  url: 'auth-userroles.wedeploy.io',
+  url: config.authServiceUrl,
   scopes: ['free'],
   redirect: '/',
 });

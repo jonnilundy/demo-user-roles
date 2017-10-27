@@ -1,5 +1,7 @@
-const wedeploy = require('wedeploy');
-const auth = wedeploy.auth('auth-userroles.wedeploy.io');
+import config from '../config';
+import wedeploy from 'wedeploy';
+
+const auth = wedeploy.auth(config.authServiceUrl);
 
 /**
  * Downgrade User Scope Route

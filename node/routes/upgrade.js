@@ -1,6 +1,7 @@
-const wedeploy = require('wedeploy');
-const auth = wedeploy.auth('auth-userroles.wedeploy.io')
-	.auth('e685224b-9431-4580-824d-1358954bbcca');
+import config from '../config';
+import wedeploy from 'wedeploy';
+
+const auth = wedeploy.auth(config.authServiceUrl).auth(config.masterToken);
 
 /**
  * Upgrade User Scope Route
