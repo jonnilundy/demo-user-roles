@@ -29,11 +29,11 @@ Go to the source code in your command line and run `we deploy -p yourproject`
 
 Now your project will be live at node-yourproject.wedeploy.io.
 
-#### Run locally
+## Run locally
 After creating your auth service in WeDeploy,
 use `npm run dev` to see the app run locally. Don't forget to install npm packages first.
 
-#### Explore
+## Explore
 
 The flow of the app goes as follows:
 
