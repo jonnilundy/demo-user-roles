@@ -2,11 +2,11 @@
 
 This demo shows how one can use WeDeploy's **Auth** and **Node** services to
 
-- create users
-- authenticate users with wedeploy-middleware
-- manage users' roles (supportedScopes)
-- sign in with email and password
-- retrieve users
+- [create users](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/post-user.js#L14-L19)
+- [authenticate users with wedeploy-middleware](https://github.com/jonnilundy/demo-user-roles/blob/master/node/src/index.js#L30-L40)
+- [manage users' roles (supportedScopes)](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/upgrade.js)
+- [sign in with email and password](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/post-login.js#L14)
+- [retrieve users](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/admin.js#L21)
 - update users
 
 The examples inside this demo also change behavior depending on the user's role (`free` or `admin`).
