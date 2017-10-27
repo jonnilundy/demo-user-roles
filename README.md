@@ -1,11 +1,23 @@
-# WeDeploy Auth Demo
+# WeDeploy User Role Demo
 
-This template will help you through the process of deploying a WeDeploy Auth service.
+This demo shows how to create users with roles (supportedScopes) and customize the apps behavior depending on the user's role.
 
-Simply, we show you a simple flow for creating users and signing them in.
+If this is your first encounter with WeDeploy, feel free to checkout our website to better understand
 
-> [Visit our documentation to learn more about making your own Authentication app.](http://wedeploy.com/docs/auth/)
+## Deploying
 
-OR
+#### Fork/Clone
+Fork this repo and clone it to your local machine.
 
-> [Jump into one of our tutorials to make an app like this.](http://wedeploy.com/tutorials/auth-web/)
+#### Create WeDeploy Project
+Login to the [WeDeploy Console](https://console.wedeploy.com) and create a new project.
+
+#### Update all request endpoints
+Use the ID and master token of the project you just created and replace on all requests (anywhere there is `.auth('')`).
+
+#### Deploy with one command
+Go to the source code in your command line and run `we deploy -p yourproject`
+
+Now your project will be live at node-yourproject.wedeploy.io.
+
+#### Create
