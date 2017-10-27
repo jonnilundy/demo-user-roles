@@ -29,10 +29,6 @@ Go to the source code in your command line and run `we deploy -p yourproject`
 
 Now your project will be live at node-yourproject.wedeploy.io.
 
-## Run locally
-After creating your auth service in WeDeploy,
-use `npm run dev` to see the app run locally. Don't forget to install npm packages first.
-
 ## Explore
 
 The flow of the app goes as follows:
@@ -51,7 +47,10 @@ OR
 
 ![](https://d26dzxoao6i3hh.cloudfront.net/items/36262m102x2X2Z2A0l1i/Screen%20Shot%202017-10-27%20at%209.31.32%20AM.223a2f1S1g2O.png)
 
-#### Create
+## Run locally
+After creating your auth service in WeDeploy,
+use `npm run dev` to see the app run locally. Don't forget to install npm packages first.
+
+## Create for Yourself
 
 With the basic building blocks of Auth, you'll be able to construct a complex app with accessible authentication measures. If you have any questions, don't hesistate to reach out to us at Wedeploy.com!
-
