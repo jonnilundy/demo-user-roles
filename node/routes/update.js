@@ -18,5 +18,5 @@ export async function update(req, res, next) {
 	const data = {name, email, supportedScopes};
 
 	await auth.updateUser(userId, data);
-  res.redirect(`/user/${userId}`);
+  res.redirect(`/admin`);
 }
