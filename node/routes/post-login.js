@@ -14,7 +14,6 @@ export async function postLogin(req, res, next) {
     await auth.signInWithEmailAndPassword(req.body.email, req.body.password);
     const currentUser = auth.currentUser;
     res.cookie('access_token', auth.currentUser.token);
-    console.log('currentUser is', currentUser);
     if (currentUser.hasSupportedScopes('admin')) {
       res.redirect('/admin');
     } else if (currentUser.hasSupportedScopes('free')) {

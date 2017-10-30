@@ -17,9 +17,9 @@ export async function user(req, res, next) {
 	const user = await auth.getUser(req.params.userId);
   const source = readFileSync('./pages/user.html').toString();
   const template = handlebars.compile(source);
-  console.log('user is', user);
   const html = template({
 		title: 'User Info',
+		id: user.id,
 		name: user.name,
 		email: user.email,
 		role: user.supportedScopes[0],

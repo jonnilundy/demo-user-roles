@@ -26,7 +26,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "handlebars": "^4.0.11",
-    "wedeploy": "^4.0.1",
+    "wedeploy": "^4.1.0",
     "wedeploy-middleware": "^2.0.1"
   },
   "devDependencies": {

@@ -9,10 +9,10 @@
 	</head>
 	<body>
 		<h1>{{title}}</h1>
-		<form class="container" action="/update" method="post" autocomplete="off">
-			<input class="name" value="{{name}}"></input>
-			<input class="email" value="{{email}}"></input>
-			<select class="role">
+		<form class="container" action="/update/{{id}}" method="post" autocomplete="off">
+			<input class="name" name="name" type="text" value="{{name}}"></input>
+			<input class="email" name="email" type="text" value="{{email}}"></input>
+			<select class="role" name="role" type="text">
 				{{#scope user}}{{/scope}}
 			</select>
 			<button class="update-user" type="submit">Update User</button>
