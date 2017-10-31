@@ -12,7 +12,7 @@
 		{{#if fail}}
 			<div class="fail">The email you provided is associated to an existing account.</div>
 		{{/if}}
-		<form name="user" class="container" action="/user/{{id}}" method="post" autocomplete="off">
+		<form name="user" class="container" action="/user" method="post" autocomplete="off">
 			<input name="name" type="text" placeholder="Name" required>
 			<input name="email" type="email" placeholder="Email" required>
 			<input name="password" type="password" placeholder="Password" required>

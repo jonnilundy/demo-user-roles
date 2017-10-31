@@ -19,7 +19,7 @@ export async function postUser(req, res, next) {
     });
     await auth.signInWithEmailAndPassword(req.body.email, req.body.password);
     res.cookie('access_token', auth.currentUser.token);
-    res.redirect('/user');
+    res.redirect('/profile');
   } catch (error) {
     res.redirect('/signup?cmd=fail');
   }
