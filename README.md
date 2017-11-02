@@ -1,56 +1,15 @@
-# WeDeploy User Role Demo
+# User Roles (supportedScopes) [![Badge](https://img.shields.io/badge/built%20with-wedeploy-00d46a.svg?style=flat)](http://wedeploy.com)
 
-This demo shows how one can use WeDeploy's **Auth** and **Node** services to
+A demo of [Node.JS](https://nodejs.org/) and [WeDeploy Auth](https://wedeploy.com/docs/auth) on [WeDeploy](https://wedeploy.com).
 
-- [create users](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/post-user.js#L14-L19)
-- [using cookies, authenticate users with wedeploy-middleware](https://github.com/jonnilundy/demo-user-roles/blob/master/node/src/index.js#L30-L40)
-- [manage users' roles (supportedScopes)](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/upgrade.js)
-- [sign in with email and password](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/post-login.js#L14)
-- [retrieve users](https://github.com/jonnilundy/demo-user-roles/blob/master/node/routes/admin.js#L21)
-- update users
+## Instructions
 
-The examples inside this demo also change behavior depending on the user's role (`free` or `admin`).
+1. Install the [WeDeploy CLI](https://wedeploy.com/docs/intro/using-the-command-line/).
+2. Go to the [WeDeploy Console](https://console.wedeploy.com) and create a new project.
+3. Clone this repository and open it in a text editor.
+4. Search for all occurrences of `userroles.wedeploy.io` and replace with `yourproject.wedeploy.io`.
+5. Open the project with your command line and run `we deploy -p yourproject`.
 
-If this is your first encounter with WeDeploy, feel free to checkout [our website](https://wedeploy.com/), our [auth docs](https://wedeploy.com/docs/auth), or our [node docs](https://wedeploy.com/docs/deploy/deploying-nodejs/) to gain a more in-depth understanding of these services.
+## License
 
-## Deploying
-
-#### Fork/Clone
-Fork this repo and clone it to your local machine.
-
-#### Create WeDeploy Project
-Login to the [WeDeploy Console](https://console.wedeploy.com) and create a new project.
-
-#### Update the config file with your project's information
-Use your auth service url ('auth-YOURPROJECTNAME.wedeploy.io') and master token of the project you just created and update the config file.
-
-#### Deploy with one command
-Go to the source code in your command line and run `we deploy -p yourproject`
-
-Now your project will be live at node-yourproject.wedeploy.io.
-
-## Explore
-
-The flow of the app goes as follows:
-
-1. GET /signup
-2. Create user and get logged in with POST /user
-
-OR
-
-1. GET /login
-2. You'll be logged in and redirected to the proper webpage in POST /login
-
-3. You'll be at either /admin or /profile depending on your scope
-4. See user's information at /user/:userId with `admin` scope
-5. Upgrade or downgrade user's scopes with POST /upgrade/user/:userId or POST /downgrade/user/:userId
-
-![](https://d26dzxoao6i3hh.cloudfront.net/items/36262m102x2X2Z2A0l1i/Screen%20Shot%202017-10-27%20at%209.31.32%20AM.223a2f1S1g2O.png)
-
-## Run locally
-After creating your auth service in WeDeploy,
-use `npm run dev` to see the app run locally. Don't forget to install npm packages first.
-
-## Create for Yourself
-
-With the basic building blocks of Auth, you'll be able to construct a complex app with accessible authentication measures. If you have any questions, don't hesistate to reach out to us at Wedeploy.com!
+[BSD-3-Clause](./LICENSE.md), © Liferay, Inc.
