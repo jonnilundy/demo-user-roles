@@ -16,8 +16,10 @@
 			<input name="name" type="text" placeholder="Name" required>
 			<input name="email" type="email" placeholder="Email" required>
 			<input name="password" type="password" placeholder="Password" required>
-      <input name="admin" type="checkbox">
-      <label for="admin">Admin</label>
+      <select class="role" name="role" type="text">
+        <option value="admin">Admin Account</option>
+        <option value="free" selected>Free Account</option>
+      </select>
 			<button class="user-create" type="submit">Submit</button>
 			<a href="/">Back to login</a>
 		</form>

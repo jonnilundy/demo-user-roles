@@ -10,8 +10,8 @@ const auth = wedeploy.auth(config.authServiceUrl).auth(config.masterToken);
  * @param  {Function} next
  */
 export async function postUser(req, res, next) {
-  const isAdmin = req.body.admin;
-  const supportedScopes = isAdmin ? ['admin', 'free'] : ['free'];
+  const role = req.body.role;
+  const supportedScopes = role === 'admin' ? ['admin', 'free'] : ['free'];
   try {
     await auth.createUser({
       email: req.body.email,
@@ -21,7 +21,7 @@ export async function postUser(req, res, next) {
     });
     await auth.signInWithEmailAndPassword(req.body.email, req.body.password);
     res.cookie('access_token', auth.currentUser.token);
-    if (isAdmin) {
+    if (role === 'admin') {
       res.redirect('/admin');
     } else {
       res.redirect('/profile');
