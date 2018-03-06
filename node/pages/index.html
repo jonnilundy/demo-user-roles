@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-	    <title>{{title}}</title>
-	    <meta name="viewport" content="initial-scale=1">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
-		<link rel="stylesheet" href="/main.css">
-	</head>
-	<body>
-		<h1>{{title}}</h1>
-		{{#if fail}}
-			<div class="fail">The email or password you provided is invalid.</div>
-		{{/if}}
-		<form name="user" class="container" action="/login" method="post" autocomplete="off">
-			<input name="email" type="email" placeholder="Email" required>
-			<input name="password" type="password" placeholder="Password" required>
-			<button class="user-create" type="submit">Submit</button>
-			<a href="/signup">Create an account</a>
-		</form>
-	</body>
+  <head>
+    <meta charset="UTF-8">
+      <title>{{title}}</title>
+      <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    {{#if fail}}
+      <div class="fail">The email or password you provided is invalid.</div>
+    {{/if}}
+    <form name="user" class="container" action="/login" method="post" autocomplete="off">
+      <input name="email" type="email" placeholder="Email" required>
+      <input name="password" type="password" placeholder="Password" required>
+      <button class="user-create" type="submit">Submit</button>
+      <a href="/signup">Create an account</a>
+    </form>
+  </body>
 </html>

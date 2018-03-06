@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-	    <title>{{title}}</title>
-	    <meta name="viewport" content="initial-scale=1">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
-		<link rel="stylesheet" href="/main.css">
-		<link rel="stylesheet" href="/admin.css">
-	</head>
-	<body>
-		<h1>{{title}}</h1>
-		<div class="user-list">
-			<div class="user-item title">
-				<div class="name"><p>Name</p></div>
-				<div class="email"><p>Email</p></div>
-				<div class="role"><p>Role</p></div>
-			</div>
-			{{#list users}}{{/list}}
-		</div>
-		<a href="/logout">Sign Out</a>
-	</body>
+  <head>
+    <meta charset="UTF-8">
+      <title>{{title}}</title>
+      <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/admin.css">
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <div class="user-list">
+      <div class="user-item title">
+        <div class="name"><p>Name</p></div>
+        <div class="email"><p>Email</p></div>
+        <div class="role"><p>Role</p></div>
+      </div>
+      {{#list users}}{{/list}}
+    </div>
+    <a href="/logout">Sign Out</a>
+  </body>
 </html>

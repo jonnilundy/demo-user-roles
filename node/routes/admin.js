@@ -22,10 +22,10 @@ export async function admin(req, res, next) {
       readFileAsync('./pages/admin.html'),
     ]);
     const allUsersSorted = allUsers.sort(
-			(a, b) => a.supportedScopes[0].localeCompare(b.supportedScopes[0])
+      (a, b) => a.supportedScopes[0].localeCompare(b.supportedScopes[0])
     );
-		const template = handlebars.compile(source.toString());
-		const html = template({users: allUsersSorted, title: 'Admin Dashboard'});
+    const template = handlebars.compile(source.toString());
+    const html = template({users: allUsersSorted, title: 'Admin Dashboard'});
     res.send(html);
   } catch (error) {
     throw error;

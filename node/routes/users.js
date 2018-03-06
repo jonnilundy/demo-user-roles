@@ -11,8 +11,8 @@ const auth = wedeploy.auth(config.authServiceUrl);
  */
 export async function users(req, res, next) {
   try {
-		const currentUser = res.locals.auth.currentUser;
-		await auth.loadCurrentUser(currentUser.token);
+    const currentUser = res.locals.auth.currentUser;
+    await auth.loadCurrentUser(currentUser.token);
     const allUsers = await auth.getAllUsers();
     res.send(allUsers);
   } catch (error) {

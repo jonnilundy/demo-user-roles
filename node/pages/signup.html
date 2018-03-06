@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-	    <title>{{title}}</title>
-	    <meta name="viewport" content="initial-scale=1">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
-		<link rel="stylesheet" href="/main.css">
-	</head>
-	<body>
-		<h1>{{title}}</h1>
-		{{#if fail}}
-			<div class="fail">The email you provided is associated to an existing account.</div>
-		{{/if}}
-		<form name="user" class="container" action="/user" method="post" autocomplete="off">
-			<input name="name" type="text" placeholder="Name" required>
-			<input name="email" type="email" placeholder="Email" required>
-			<input name="password" type="password" placeholder="Password" required>
+  <head>
+    <meta charset="UTF-8">
+      <title>{{title}}</title>
+      <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    {{#if fail}}
+      <div class="fail">The email you provided is associated to an existing account.</div>
+    {{/if}}
+    <form name="user" class="container" action="/user" method="post" autocomplete="off">
+      <input name="name" type="text" placeholder="Name" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <input name="password" type="password" placeholder="Password" required>
       <select class="role" name="role" type="text">
         <option value="admin">Admin Account</option>
         <option value="free" selected>Free Account</option>
       </select>
-			<button class="user-create" type="submit">Submit</button>
-			<a href="/">Back to login</a>
-		</form>
-	</body>
+      <button class="user-create" type="submit">Submit</button>
+      <a href="/">Back to login</a>
+    </form>
+  </body>
 </html>
